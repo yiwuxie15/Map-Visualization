@@ -1,0 +1,98 @@
+<!--Mock Miner-->
+<!--Sha He, Xiaochen Li, Gedi Tang, Yike Wang, Zidong Wang-->
+
+<html>
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="infovis">
+    <meta name="description" content="Coursera MOOC Participation & Resource Accessing InfoVis">
+    <meta name="author" content="Mock Miner">
+
+    <title>Coursera MOOC Participation & Resource Accessing InfoVis</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script type="text/javascript" onload="loaded=1" src="c3.js"></script>
+    <script src="mm.js"></script> 
+    <link rel="stylesheet" type="text/css" href="mm.css"/>
+    <link rel="stylesheet" type="text/css" href="c3.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <!--Start-->
+  <body>
+    <header>
+      Coursera MOOC Participation & Resource Accessing InfoVis
+      <br><span class="subtitle">for <a href="https://www.coursera.org/course/introfinance" target="_blank">Introduction to Finance</a>, University of Michigan</span>
+    </header>
+    <div id="main">
+      <!--Yike-->
+      <div class="divider"></div>
+      <div class="section" id="world_map">
+        <div id="map">
+          <script>
+          var m_width = $("#map").width();
+          var width = 938;
+          var height = 500;
+          var svg = d3.select("#map").append("svg")
+                      .attr("preserveAspectRatio", "xMidYMid")
+                      .attr("viewBox", "0 0 " + width + " " + height)
+                      .attr("width", m_width)
+                      .attr("height", m_width * height / width)
+                      .attr("id","map_svg");
+          </script>
+        </div>
+        <div id="map_sider">
+          <h3>Create your group<br><span class="details">by selecting countries in map</span></h3>
+          <input style="text" id="group_name" autocomplete="off" placeholder="Name your group"> 
+          <ul id="new_group">
+          </ul>
+          <button onclick="addGroup()">Add group</button>
+          <hr>
+          <div id="groups">
+            <!--add groups in .js-->
+          </div>
+          <hr>
+          <button onclick="analyze()" style="background-color:#1ABC9C;color:#FFFFFF;">Analyze</button>
+        </div>
+      </div>
+      <!--End of Yike-->
+      <div class="divider" style="padding-top:0px;"></div>
+
+      <div class="section" id="parallel">
+        <h3 style="text-align:center;">Check how students from different regions behave different<br><span class="details">by hovering over certain group</span></h3>
+        <script>
+        var margin_p = {top: 40, right: 200, bottom: 40, left: 200};
+        var width_p = $("#parallel").width() - margin_p.left - margin_p.right;
+        var height_p = 400 - margin_p.top - margin_p.bottom;
+
+        var svg_p = d3.select("#parallel").append("svg")
+                      .attr("width", width_p + margin_p.left + margin_p.right)
+                      .attr("height", height_p + margin_p.top + margin_p.bottom)
+                      .append("g")
+                      .attr("transform", "translate(" + margin_p.left + "," + margin_p.top + ")");
+
+        </script>
+      </div>
+
+      <div class="divider"></div>
+
+      <!--Sha-->
+      <div class="section" id="comparison">
+        <h3 style="text-align:center;">Check the total number of each lecture that viewed by every group<br>
+          <span class="details">and how the total number changed</span></h3>
+        <div id="chart">
+
+        </div>
+      </div>
+      <!--End of Sha-->
+    </div>
+    <footer>
+      &copy;Mock Miner
+    </footer>
+    
+  </body>
+</html>

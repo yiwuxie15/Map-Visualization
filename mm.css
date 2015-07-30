@@ -1,0 +1,295 @@
+/*Layout*/
+body{
+	font-family: "Open Sans", sans-serif;
+	min-width: 1024px;
+}
+
+p{
+	margin: 0px;
+	padding: 0px;
+	color: #212121;
+}
+
+header{
+	margin: 60px 20px 0px;
+	font-weight: 400;
+	text-align: center;
+	font-size: 21px; 
+	color: #212121;
+}
+
+footer{
+	margin: 20px 20px 40px;
+	font-weight: 100;
+	font-size: 13px;
+	text-align: center;
+	padding-top: 20px;
+	border-top: 1px solid #EFEFEF;
+	color: #999;
+}
+
+input{
+	padding:6px 12px;
+	margin:0;
+	width:100%;
+	border:2px solid #27AE60;
+	font-size:12px;
+	color:#212121;	
+}
+
+#main{
+	margin: 0px 20px 20px;
+	min-height: 300px;
+}
+
+.section{
+	clear: both;
+}
+
+#map{
+	float: left;
+	width: calc(100% - 200px);
+	height: auto;
+}
+
+#map_sider{
+	float: left;
+	width: 150px;
+	margin-left: 10px;
+	background-color: #F4F5F6;
+	min-height: 200px;
+	padding: 20px;
+}
+
+#comparison{
+	min-height: 500px;
+}
+
+.subtitle{
+	font-size: 16px;
+	line-height: 32px;
+	font-weight: 100;
+	color: #BBB;
+}
+
+a{
+	color: #27AE60;
+	text-decoration: none;
+	font-weight: 300;
+	border-bottom: 1px dashed #27AE60;
+}
+
+a:hover{
+	border-bottom: 1px solid #27AE60;
+}
+
+.divider{
+	width: 40px;
+	margin: 0px auto 40px;
+	padding: 20px 0px;
+	border-bottom: 8px solid #1ABC9C;
+	clear: both;
+}
+
+button{
+	color:#27AE60;
+	padding:6px 20px;
+	border-radius:2px;
+	border:2px solid #27AE60;
+	text-transform:uppercase;
+	display:inline-block;
+	background:transparent;
+	margin-left:0;
+}
+button:hover{
+	cursor:pointer;
+	color:#FFF;
+	background-color:#1ABC9C;
+}
+button:active{
+	outline:none;
+	border:2px solid #27AE60;
+}
+
+button:focus{
+	outline:none;
+}
+
+h3{
+	font-size: 14px;
+	color: #212121;
+	text-transform: capitalize;
+	font-weight: 400;
+}
+
+h4{
+	margin: 0px;
+	padding: 0px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #212121;
+	text-transform: capitalize;
+}
+
+h4 span{
+	font-size: 12px;
+	padding: 0px 0px 0px 10px;
+	font-weight: 300;
+	color: #999999;
+}
+
+em{
+	color: #27AE60;
+	font-weight: 400;
+}
+
+hr{
+	margin: 32px 0px 12px;
+	border: 1px solid #FFFFFF;
+}
+
+.details{
+	font-weight: 100;
+	color: #999999;
+	text-transform: none;
+}
+
+.tags{
+	border-radius: 14px;
+	font-size: 13px;
+	display: inline-block;
+	padding: 2px 12px;
+	margin: 4px 2px 4px 0px;
+	border: 2px solid #27AE60;
+}
+
+.selected{
+	color: #FFFFFF;
+	background-color: rgba(26,188,156,1);
+}
+
+.tags:hover{
+	cursor: pointer;
+	color: #FFFFFF;
+	background-color: rgba(26,188,156,0.4);
+}
+
+ul{padding-left:20px;font-size:14px;color:#212121;}
+ul li{list-style-type:none;position:relative;margin-bottom:.5em;}
+ul li:before{font-weight:600;content:"√";display:inline-block;position:absolute;left:-1.2em;color:#27AE60;}
+
+ul.in_map{padding-left:16px;font-size: 12px;}
+ul.in_map li{margin-bottom: 0px;}
+ul.in_map li:before{left:-1.2em;color: #212121;}
+
+/*Map*/
+#map svg{
+	fill:#F4F5F6;
+}
+
+#map .tooltip {
+	font-size: 12;
+	padding: 10px;
+	width: 250px;
+	background: rgba(255,255,255,0.95);
+	color: #212121;
+	position: absolute;
+	top: 20px;
+	border-radius: 2px;
+	border: 3px solid #EFEFEF;
+	pointer-events:none;
+}
+
+#map .heatinfo{
+	position: relative;
+	left: 20px;
+	bottom: 120px;
+	width: 250px;
+	height: 70px;
+	background-color: transparent;
+}
+
+#map .heatinfo .heatone{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	opacity:0.65;
+	pointer-events:none;
+}
+
+#map .heatinfo .heatonetext{
+	color: #212121;
+	font-size: 12px;
+	font-weight: 400;
+	position: absolute;
+	pointer-events:none;
+}
+
+/*Parallel*/
+#parallel,#comparison{
+	background-color: #F4F5F6;
+	margin: 30px 0px;
+	padding: 20px 0px;
+	
+}
+
+#parallel .background path {
+  fill: none;
+  stroke: none;
+  stroke-width: 20px;
+  pointer-events: stroke;
+}
+
+#parallel .foreground path {
+  fill: none;
+  stroke: #1ABC9C;
+  stroke-width: 1.5px;
+}
+
+#parallel .tick text{
+	font-size: 12px;
+	fill:#666666; 
+}
+
+#parallel .axis .title {
+  font-size: 12px;
+  color: #212121;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#parallel .axis line,
+#parallel .axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#parallel .label {
+	font-size: 12px;
+  -webkit-transition: fill 125ms linear;
+}
+
+#parallel .active .label:not(.inactive) {
+  font-weight: bold;
+}
+
+#parallel .label.inactive {
+  fill: #ccc;
+}
+
+#parallel .foreground path.inactive {
+  stroke: #ccc;
+  stroke-opacity: .5;
+  stroke-width: 1px;
+}
+/*End of Parallel*/
+
+
+/*Line Chart*/
+#chart{
+	margin: 20px 80px 0px 120px;
+}
+/*End of Line Chart*/
